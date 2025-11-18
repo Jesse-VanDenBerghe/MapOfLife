@@ -32,6 +32,10 @@ room = "2.6.1"
 hilt = "2.51"
 hiltNavigation = "1.1.0"
 
+# Google Play Services & WorkManager
+playServicesLocation = "21.0.1"
+workManager = "2.8.1"
+
 # Testing
 junit = "4.13.2"
 junit5 = "5.10.0"
@@ -77,6 +81,10 @@ androidx-room-compiler = { group = "androidx.room", name = "room-compiler", vers
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigation" }
+
+# Google Play Services & WorkManager
+play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
+androidx-work-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "workManager" }
 
 # Testing
 junit = { group = "junit", name = "junit", version.ref = "junit" }

@@ -27,53 +27,53 @@ Implement a multi-layered architecture:
 ## Implementation Plan
 
 ### Phase 1: Database & Repository Layer
-- [ ] Create `LocationPoint` entity
+- [x] Create `LocationPoint` entity
   - Fields: id (Long, PK), latitude (Double), longitude (Double), timestamp (Long)
   - Add indices on latitude and longitude for spatial queries
   - Separate table from LifeItemEntity for performance isolation
   
-- [ ] Update AppDatabase
+- [x] Update AppDatabase
   - Add LocationPoint entity to database
   - Increment database version to 2
   - Add migration strategy from version 1 to 2
   
-- [ ] Create `LocationPointDao`
+- [x] Create `LocationPointDao`
   - Insert operation (single point)
   - Batch insert operation for future optimization
   - Query for last location (for deduplication check)
   - Query for all locations (for future map visualization)
   - Count query (for debugging/statistics)
   
-- [ ] Create `LocationRepository`
+- [x] Create `LocationRepository`
   - Implement Haversine distance calculation
   - shouldSaveLocation() method (checks if >10m from last point)
   - saveLocationIfNeeded() method (combines check + save)
   - Expose Flow<List<LocationPoint>> for observers
   
-- [ ] Create `LocationConfig` object
+- [x] Create `LocationConfig` object
   - TRACKING_INTERVAL_MS = 10_000L (easily editable)
   - DEDUPLICATION_DISTANCE_METERS = 10.0 (easily editable)
   - LOCATION_PRIORITY = balanced accuracy
 
 ### Phase 2: Location Service Implementation
-- [ ] Create `LocationTrackingService` (Foreground Service)
+- [x] Create `LocationTrackingService` (Foreground Service)
   - Extend Service class
   - Inject LocationRepository via Hilt
   - Create persistent notification channel
   - Implement location callback handler
   
-- [ ] Implement location client integration
+- [x] Implement location client integration
   - Use Google Play Services FusedLocationProviderClient
   - Configure LocationRequest with 10s interval and balanced accuracy
   - Handle location updates in callback
   - Implement proper cleanup on service destroy
   
-- [ ] Add service lifecycle management
+- [x] Add service lifecycle management
   - Start service in foreground with notification
   - Stop location updates on service destroy
   - Handle service restart scenarios
   
-- [ ] Create `LocationTrackingWorker` (WorkManager)
+- [x] Create `LocationTrackingWorker` (WorkManager)
   - Periodic worker to ensure service stays alive
   - Check if service is running, restart if needed
   - Schedule on app startup and boot complete
@@ -105,12 +105,12 @@ Implement a multi-layered architecture:
   - Schedule LocationTrackingWorker
 
 ### Phase 4: Dependency Management
-- [ ] Update build.gradle.kts
+- [x] Update build.gradle.kts
   - Add Google Play Services Location dependency
   - Add WorkManager dependency
   - Ensure correct versions and compatibility
   
-- [ ] Update libs.versions.toml
+- [x] Update libs.versions.toml
   - Add playServicesLocation version
   - Add workManager version
   - Create dependency bundles if needed

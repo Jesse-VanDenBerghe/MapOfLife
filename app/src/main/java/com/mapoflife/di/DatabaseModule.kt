@@ -2,8 +2,10 @@ package com.mapoflife.di
 
 import android.content.Context
 import androidx.room.Room
+import com.mapoflife.data.LocationRepository
 import com.mapoflife.data.local.AppDatabase
 import com.mapoflife.data.local.LifeItemDao
+import com.mapoflife.data.local.LocationPointDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -28,4 +30,14 @@ object DatabaseModule {
     @Singleton
     fun provideLifeItemDao(database: AppDatabase): LifeItemDao =
         database.lifeItemDao()
+
+    @Provides
+    @Singleton
+    fun provideLocationPointDao(database: AppDatabase): LocationPointDao =
+        database.locationPointDao()
+
+    @Provides
+    @Singleton
+    fun provideLocationRepository(locationPointDao: LocationPointDao): LocationRepository =
+        LocationRepository(locationPointDao)
 }
