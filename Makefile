@@ -1,10 +1,13 @@
-.PHONY: build test run
+.PHONY: build test coverage run
 
 build:
 	./gradlew build
 
 test:
-	./gradlew testDebugUnitTest
+	./gradlew testDebugUnitTest --no-daemon
+
+coverage:
+	./gradlew testDebugUnitTest jacocoTestReport --no-daemon
 
 run:
 	./gradlew installDebug
