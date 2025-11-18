@@ -17,19 +17,19 @@ Modern Android application built with Jetpack Compose, Room database, and Hilt d
 
 ```
 app/src/main
-├── kotlin/com/mapoflife
-│   ├── MapOfLifeApp.kt          # Application class with @HiltAndroidApp
-│   ├── MainActivity.kt           # Main activity with Compose
+├── java/com/mapoflife
+│   ├── MyLifeApplication.kt     # Application class with @HiltAndroidApp
 │   ├── data/
-│   │   ├── local/              # Room database & entities
-│   │   └── repository/         # Data repository implementations
+│   │   ├── local/              # Room database, entities, DAO
+│   │   └── repository/         # Repository implementations
 │   ├── domain/
 │   │   └── repository/         # Repository interfaces
 │   ├── ui/
-│   │   ├── screen/            # Composables and screens
+│   │   ├── screen/            # Composables & screens
 │   │   ├── viewmodel/         # ViewModels
 │   │   └── theme/             # Material3 theme
-│   └── di/                     # Hilt dependency injection modules
+│   └── di/                     # Hilt modules
+├── res/                         # Resources (drawables, layouts, values)
 └── AndroidManifest.xml
 ```
 
@@ -37,37 +37,34 @@ app/src/main
 
 ### Prerequisites
 - Android Studio (2023.1+) or CLI tools
-- JDK 17+
+- JDK 21+
 - Android SDK (API 34)
 - Android Emulator or physical device
 
-### Build
+### Quick Commands (via Makefile)
 ```bash
-./gradlew build
+make build    # Build project
+make test     # Run unit tests
+make run      # Build, install & launch app
 ```
 
-### Run on Emulator/Device
+### Gradle Commands
 ```bash
-./gradlew installDebug
-```
-
-### Development Build (faster, non-optimized)
-```bash
-./gradlew assembleDebug
-```
-
-### Release Build
-```bash
-./gradlew assembleRelease
+./gradlew build              # Full build
+./gradlew assembleDebug      # Debug APK (faster, non-optimized)
+./gradlew assembleRelease    # Release APK
+./gradlew installDebug       # Install on device
+./gradlew testDebugUnitTest  # Run unit tests
 ```
 
 ## Key Features
 
-- **Type-safe Gradle**: Kotlin DSL for build configuration
-- **Compose UI**: Modern declarative UI framework
-- **Room Persistence**: Type-safe database queries with compile-time verification
-- **Hilt DI**: Automatic dependency management with compile-time safety
-- **MVVM Architecture**: Clean separation between UI, business logic, and data
+- **Type-safe Gradle**: Kotlin DSL + Version Catalog (`gradle/libs.versions.toml`)
+- **Compose UI**: Material 3 declarative UI
+- **Room Persistence**: Type-safe SQLite with compile-time verification
+- **Hilt DI**: Compile-time safe dependency injection
+- **Kotlin Coroutines**: Async operations
+- **MVVM Architecture**: Clean UI/logic/data separation
 
 ## Development Notes
 
@@ -76,9 +73,9 @@ Edit `app/build.gradle.kts` in the `dependencies` block. Versions are centralize
 
 ### Creating Screens
 1. Create composable in `ui/screen/`
-2. Create ViewModel in `ui/viewmodel/`
-3. Add Hilt `@HiltViewModel` annotation
-4. Inject in MainActivity or parent composable
+2. Create ViewModel in `ui/viewmodel/` with `@HiltViewModel`
+3. Inject ViewModel in composable via `hiltViewModel()`
+4. Add Hilt navigation if using Jetpack Navigation
 
 ### Database Queries
 1. Define entity in `data/local/entity/`
