@@ -2,34 +2,35 @@ package com.mapoflife.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Primary = Color(0xFF6750A4)
-val OnPrimary = Color(0xFFFFFFFF)
-val PrimaryContainer = Color(0xFFEADDFF)
-val OnPrimaryContainer = Color(0xFF21005E)
+// Monochrome palette
+val Primary = Color(0xFFFFFFFF)
+val OnPrimary = Color(0xFF000000)
+val PrimaryContainer = Color(0xFF1A1A1A)
+val OnPrimaryContainer = Color(0xFFFFFFFF)
 
-val Secondary = Color(0xFF625B71)
-val OnSecondary = Color(0xFFFFFFFF)
-val SecondaryContainer = Color(0xFFE8DEF8)
-val OnSecondaryContainer = Color(0xFF1D192B)
+val Secondary = Color(0xFFFFFFFF)
+val OnSecondary = Color(0xFF000000)
+val SecondaryContainer = Color(0xFF1A1A1A)
+val OnSecondaryContainer = Color(0xFFFFFFFF)
 
-val Tertiary = Color(0xFF7D5260)
-val OnTertiary = Color(0xFFFFFFFF)
-val TertiaryContainer = Color(0xFFFFD8E4)
-val OnTertiaryContainer = Color(0xFF31111D)
+val Tertiary = Color(0xFFFFFFFF)
+val OnTertiary = Color(0xFF000000)
+val TertiaryContainer = Color(0xFF1A1A1A)
+val OnTertiaryContainer = Color(0xFFFFFFFF)
 
-val Error = Color(0xFFB3261E)
+val Error = Color(0xFFFF0000)
 val OnError = Color(0xFFFFFFFF)
-val ErrorContainer = Color(0xFFF9DEDC)
-val OnErrorContainer = Color(0xFF410E0B)
+val ErrorContainer = Color(0xFF330000)
+val OnErrorContainer = Color(0xFFFFFFFF)
 
-val Background = Color(0xFFFFFBFE)
-val OnBackground = Color(0xFF1C1B1F)
+val Background = Color(0xFF000000)
+val OnBackground = Color(0xFFFFFFFF)
 
-val Surface = Color(0xFFFFFBFE)
-val OnSurface = Color(0xFF1C1B1F)
-val SurfaceVariant = Color(0xFFE7E0EC)
-val OnSurfaceVariant = Color(0xFF49454E)
+val Surface = Color(0xFF000000)
+val OnSurface = Color(0xFFFFFFFF)
+val SurfaceVariant = Color(0xFF1A1A1A)
+val OnSurfaceVariant = Color(0xFFFFFFFF)
 
-val Outline = Color(0xFF79747E)
-val OutlineVariant = Color(0xFFCAC7D0)
+val Outline = Color(0xFF333333)
+val OutlineVariant = Color(0xFF444444)
 val Scrim = Color(0xFF000000)
