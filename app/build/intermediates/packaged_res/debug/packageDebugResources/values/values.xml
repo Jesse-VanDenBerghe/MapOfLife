@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="material_blue_500">#2196F3</color>
+    <color name="material_blue_700">#1976D2</color>
+    <color name="material_blue_a200">#448AFF</color>
+    <string name="app_name">Map Of Life</string>
+    <style name="Theme.MapOfLife" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/material_blue_500</item>
+        <item name="android:colorPrimaryDark">@color/material_blue_700</item>
+        <item name="android:colorAccent">@color/material_blue_a200</item>
+    </style>
+</resources>

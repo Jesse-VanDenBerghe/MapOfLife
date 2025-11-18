@@ -1,0 +1,42 @@
+# Gradle
+.gradle/
+gradle/
+build/
+*.gradle
+gradle-wrapper.jar
+
+# Android Studio
+.idea/
+*.iml
+*.iws
+*.ipr
+local.properties
+.DS_Store
+
+# Build artifacts
+*.apk
+*.ap_
+*.dex
+*.class
+
+# R.java
+R.java
+
+# Gradle cache
+.gradletasknamecache
+
+# User-specific files
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.project
+.classpath
+.c9/
+
+# OS
+Thumbs.db
+.AppleDouble
+.LSOverride
